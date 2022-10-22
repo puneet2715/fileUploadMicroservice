@@ -1,0 +1,29 @@
+version: '3'
+services:
+  fileupload:
+    build: ./
+    ports:
+      - 3000:3000
+    hostname: fileupload
+    volumes:
+      - ./src/uploads:/src/uploads
+    networks:
+      - nginx_proxy_manager_default
+    
+  
+  # nginx:
+  #   image: nginx:stable
+  #   hostname: fileupload
+  #   networks:
+  #     - nginx_proxy_manager_default
+  #   #ports:
+  #   #  - 80:80
+  #   volumes:
+  #     - ./src/views:/usr/share/nginx/html
+  #     # - ./src/privacy:/usr/share/nginx/html/privacy
+  #   restart: always
+  #   command: npm i && node index.js
+
+networks:
+  nginx_proxy_manager_default:
+    external: true
