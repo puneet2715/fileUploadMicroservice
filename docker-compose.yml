@@ -5,8 +5,8 @@ services:
     ports:
       - 3000:3000
     hostname: fileupload
-    volumes:
-      - ./src/uploads:/src/uploads
+    # volumes:
+      # - ./src/uploads:/src/uploads
     networks:
       - nginx_proxy_manager_default
     
