@@ -63,7 +63,7 @@ app.post("/api/fileanalyse", upload.single("upfile"), async function (req, res) 
   res.json({
     name: uploadedFile.originalname,
     type: uploadedFile.mimetype,
-    size: size
+    size: size 
   });
 });
 
